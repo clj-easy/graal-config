@@ -1,4 +1,4 @@
-# Graal config
+# Graal Configurations Collection
 
 The repository for distributing the GraalVM `native-image`configurations via simple `deps.edn` subproject recipes.
 
@@ -7,4 +7,14 @@ The repository for distributing the GraalVM `native-image`configurations via sim
    2. Read it's README.md instructions.
    
 ## Supported libraries
-- [taoensso.nippy](https://github.com/ptaoussanis/nippy)
+   - [taoensso.nippy](https://github.com/ptaoussanis/nippy)
+
+## Tested GraalVM versions
+   - GraalVM 21.1.0
+   - GraalVM 21.2.0
+   - GraalVM DEV build
+
+## Contributing
+   1. Clone the repository.
+   2. Copy the recipe `cp -R recipe config/organization/library`.
+   3. Provide `META-INF/organization/library/native-image.properties` with necessary native configurations.

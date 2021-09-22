@@ -1,1 +1,2 @@
-{:paths ["resources"]}
+{:paths ["resources"]
+ :deps {}}
