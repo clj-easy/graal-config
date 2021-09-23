@@ -49,6 +49,7 @@
                     "--verbose"
                     "--no-fallback"
                     "--no-server"
+                    "-H:+ReportExceptionStackTraces"
                     "-H:Name=native-test"))}
 
   native-image-test
