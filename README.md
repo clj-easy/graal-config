@@ -15,9 +15,10 @@ com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
 
 ## Supported libraries
 
-  | Library name                                           | Config path                         |
-  |--------------------------------------------------------|-------------------------------------|
-  | [taoensso.nippy](https://github.com/ptaoussanis/nippy) | [link](./config/com.taoensso/nippy) |
+  | Library name                                            | Config path                         |
+  |---------------------------------------------------------|-------------------------------------|
+  | [taoensso.nippy](https://github.com/ptaoussanis/nippy)  | [link](./config/com.taoensso/nippy) |
+  | [dakrone.cheshire](https://github.com/dakrone/cheshire) | [link](./config/cheshire/cheshire)  |
 
 ## Tested GraalVM versions
 
