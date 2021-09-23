@@ -9,9 +9,9 @@ The repository for distributing the GraalVM `native-image`configurations via sim
 
 ## Supported libraries
 
-  | Library name                                           | Config path                     |
-  |--------------------------------------------------------|---------------------------------|
-  | [taoensso.nippy](https://github.com/ptaoussanis/nippy) | [link](./config/taoensso/nippy) |
+  | Library name                                           | Config path                         |
+  |--------------------------------------------------------|-------------------------------------|
+  | [taoensso.nippy](https://github.com/ptaoussanis/nippy) | [link](./config/com.taoensso/nippy) |
 
 ## Tested GraalVM versions
 

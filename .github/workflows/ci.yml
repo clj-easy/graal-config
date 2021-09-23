@@ -26,6 +26,13 @@ jobs:
             ~/graal-21.3.0-dev
           key: ${{ runner.os }}-graalvm
 
+      - name: Cache Maven
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/deps.edn') }}
+
       - name: Setup Babashka
         uses: turtlequeue/setup-babashka@v1.3.0
         with:
