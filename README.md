@@ -3,17 +3,12 @@
 A repository containing GraalVM `native-image` configurations to be used as git
 libraries in `deps.edn`.
 
-This library is recommended in combination with `graal-build-time` that
-automatically injects `--initialize-at-build-time` packages list.
-
-``` clojure
-com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
-```
-
 ## How to use
 
 - Include this library as a git dependency in your native image classpath.
 - Set `:deps/root` to `"config/<org>/<lib>"`
+- In addition to this, include `com.github.clj-easy/graal-build-time` which automatically configures `--initialize-at-build-time` with clojure packages.
+- Then build your native image!
 
 Full example for `cheshire/cheshire` (update versions as necessary):
 
@@ -24,6 +19,7 @@ Full example for `cheshire/cheshire` (update versions as necessary):
   com.github.clj-easy/graal-config {:git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
                                     :deps/root "config/cheshire/cheshire"}}}
 ```
+
 
 ## Supported libraries
 
