@@ -1,3 +1,6 @@
+TARGET_JAR:=NULL
+GRAALVM_HOME:=NULL
+
 install-graalvm:
 ifeq ($(wildcard graal-21.1.0),)
 	@echo "Installing GraalVM 21.1.0"
@@ -21,10 +24,26 @@ ifeq ($(wildcard graal-21.3.0-dev),)
 endif
 
 clean-classes:
-	@rm -Rf classes
+	@rm -Rf target
+
+compile-21.1.0:
+	@clojure -X:uberjar '{:uber-file "output-21.1.0.jar"}'
+
+compile-21.2.0:
+	@clojure -X:uberjar '{:uber-file "output-21.2.0.jar"}'
+
+compile-21.3.0-dev:
+	@clojure -X:uberjar '{:uber-file "output-21.3.0-dev.jar"}'
+
+native-compile:
+	$(GRAALVM_HOME)/bin/native-image -jar output-$(OUTPUT_VERSION).jar \
+    --verbose \
+	-H:Name=output-$(OUTPUT_VERSION) \
+	-H:+ReportExceptionStackTraces \
+	--initialize-at-build-time=clojure,example
 
 test-21.1.0:
-	@GRAALVM_HOME=./graal-21.1.0 clojure -M:native-image "-H:Name=output-21.1.0" --verbose
+	@make GRAALVM_HOME=./graal-21.1.0 OUTPUT_VERSION=21.1.0 native-compile
 	@[ -f "output-21.1.0" ] && printf "Testing the native-image output-21.1.0\n\n" && ./output-21.1.0
 
 test-21.2.0:

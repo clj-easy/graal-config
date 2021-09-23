@@ -2,15 +2,12 @@
  :deps  {org.clojure/clojure              {:mvn/version "1.10.3"}
          com.taoensso/nippy               {:mvn/version "2.14.0"}
          com.github.clj-easy/graal-config {:local/root "../"}}
-
- :aliases {:native-image
-           {:main-opts ["-m" "clj.native-image" "example.core"
-                        "--initialize-at-build-time=clojure,example"
-                        "-H:+ReportExceptionStackTraces"
-                        "--no-fallback"]
-            :jvm-opts  ["-Dclojure.compiler.direct-linking=true"
-                       "-Dclojure.spec.skip-macros=true"]
-            :extra-deps
-            {clj.native-image/clj.native-image
-             {:git/url "https://github.com/taylorwood/clj.native-image.git"
-              :sha     "7708e7fd4572459c81f6a6b8e44c96f41cdd92d4"}}}}}
+ :aliases
+ {:uberjar {:deps {io.github.seancorfield/build-clj
+                   {:git/tag "v0.4.0" :git/sha "54e39ae"}}
+            :ns-default org.corfield.build
+            :exec-fn org.corfield.build/uber
+            :exec-args {:main example.core
+                        :ns-compile [example.core]
+                        :compile-opts ["-Dclojure.compiler.direct-linking=true"
+                                       "-Dclojure.spec.skip-macros=true"]}}}}
