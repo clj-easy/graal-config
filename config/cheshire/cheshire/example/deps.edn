@@ -1,0 +1,13 @@
+{:paths ["src"]
+ :deps  {org.clojure/clojure              {:mvn/version "1.10.3"}
+         com.taoensso/nippy               {:mvn/version "2.14.0"}
+         com.github.clj-easy/graal-config {:local/root "../"}}
+ :aliases
+ {:uberjar {:deps {io.github.seancorfield/build-clj
+                   {:git/tag "v0.4.0" :git/sha "54e39ae"}}
+            :ns-default org.corfield.build
+            :exec-fn org.corfield.build/uber
+            :exec-args {:main example.core
+                        :ns-compile [example.core]
+                        :compile-opts ["-Dclojure.compiler.direct-linking=true"
+                                       "-Dclojure.spec.skip-macros=true"]}}}}

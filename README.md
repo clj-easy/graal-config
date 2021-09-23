@@ -28,7 +28,7 @@ com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
 ## Contributing
 
 1. Clone the repository.
-2. Copy the recipe `cp -R recipe config/organization/library`.
+2. Copy the recipe `cp -R recipe/* config/organization/library`.
 3. Provide `META-INF/organization/library/native-image.properties` with necessary native configurations.
 
 ### Tests
