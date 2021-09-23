@@ -1,8 +1,10 @@
-# Graal Configurations Collection
+# Graal config
 
-The repository for distributing the GraalVM `native-image`configurations via simple `deps.edn` subproject recipes.
+A repository containing GraalVM `native-image` configurations to be used as git
+libraries in `deps.edn`.
 
-This library is recommended in combination with `graal-build-time` that automatically injects `--initialize-at-build-time` packages list.
+This library is recommended in combination with `graal-build-time` that
+automatically injects `--initialize-at-build-time` packages list.
 
 ``` clojure
 com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
@@ -10,15 +12,25 @@ com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
 
 ## How to use
 
-   1. Find the library you would like to use.
-   2. Read it's README.md instructions.
+- Include this library as a git dependency in your native image classpath.
+- Set `:deps/root` to `"config/<org>/<lib>"`
+
+Full example for `cheshire/cheshire` (update versions as necessary):
+
+``` clojure
+{:deps
+ {cheshire/cheshire {:mvn/version "5.10.0"}
+  com.github.clj-easy/graal-build-time {:mvn/version "0.1.3"}
+  com.github.clj-easy/graal-config {:git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
+                                    :deps/root "config/cheshire/cheshire"}}}
+```
 
 ## Supported libraries
 
   | Library name                                            | Config path                         |
   |---------------------------------------------------------|-------------------------------------|
-  | [taoensso.nippy](https://github.com/ptaoussanis/nippy)  | [link](./config/com.taoensso/nippy) |
-  | [dakrone.cheshire](https://github.com/dakrone/cheshire) | [link](./config/cheshire/cheshire)  |
+  | [com.taoensso/nippy](https://github.com/ptaoussanis/nippy)  | [link](./config/com.taoensso/nippy) |
+  | [cheshire/cheshire](https://github.com/dakrone/cheshire)    | [link](./config/cheshire/cheshire)  |
 
 ## Tested GraalVM versions
 
@@ -34,4 +46,9 @@ com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
 
 ### Tests
 
-Run `bb native-image-test :dir config/com.taoensso/nippy/example :graalvm-version 21.1.0`.
+Run `bb native-image-test :dir config/<org>/<lib>/example :graalvm-version <graalvm-version>`.
+E.g:
+
+``` clojure
+$ bb native-image-test :dir config/com.taoensso/nippy/example :graalvm-version 21.1.2`.
+```
