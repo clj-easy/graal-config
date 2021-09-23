@@ -9,7 +9,7 @@ Add following dependency to your `deps.edn`
 
 ``` clojure
 com.github.clj-easy/graal-config  {:git/sha "<latest-sha>"
-                                   :deps/root "config/com.taoensso/nippy"}
+                                   :deps/root "config/<organization>/<library_name>"}
 ```
 
 
