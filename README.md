@@ -10,16 +10,20 @@ libraries in `deps.edn`.
 - In addition to this, include `com.github.clj-easy/graal-build-time` which automatically configures `--initialize-at-build-time` with clojure packages.
 - Then build your native image!
 
-Full example for `cheshire/cheshire` (update versions as necessary):
+Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
+(update versions as necessary):
 
 ``` clojure
 {:deps
  {cheshire/cheshire {:mvn/version "5.10.0"}
-  com.github.clj-easy/graal-build-time {:mvn/version "0.1.3"}
-  com.github.clj-easy/graal-config {:git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
-                                    :deps/root "config/cheshire/cheshire"}}}
+  com.taoensso/nippy {:mvn/version "3.1.1"}
+  graal-config/cheshire {:git/url "https://github.com/clj-easy/graal-config"
+                         :git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
+                         :deps/root "config/cheshire/cheshire"}
+  graal-config/nippy {:git/url "https://github.com/clj-easy/graal-config"
+                      :git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
+                      :deps/root "config/com.taoensso/nippy"}}}
 ```
-
 
 ## Supported libraries
 
