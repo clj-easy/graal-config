@@ -4,14 +4,23 @@
   [inherit? cmd & args]
   (p/process (into (p/tokenize cmd) (remove nil? args)) {:inherit inherit?}))
 
+(def DEV_BUILD "21.3.0-dev")
+(def ONE_RELEASE_BEFORE_LATEST_CE "21.1.0")
+(def LATEST_CE "21.2.0")
+
 (def versions<->home
-  {"21.3.0-dev" "~/graal-21.3.0-dev"
-   "21.1.0"     "~/graal-21.1.0"
-   "21.2.0"     "~/graal-21.2.0"})
+  {DEV_BUILD                    (str "~/graal-" DEV_BUILD)
+   ONE_RELEASE_BEFORE_LATEST_CE (str "~/graal-" ONE_RELEASE_BEFORE_LATEST_CE)
+   LATEST_CE                    (str "~/graal-" LATEST_CE)})
+
+(def ALL [DEV_BUILD LATEST_CE ONE_RELEASE_BEFORE_LATEST_CE])
+(def STABLE_BUILDS [LATEST_CE ONE_RELEASE_BEFORE_LATEST_CE])
 
 (def configs
-  [{:name "com.taoensso/nippy"
-    :versions ["21.3.0-dev"]}])
+  [{:name     "com.taoensso/nippy"
+    :versions [DEV_BUILD]}
+   {:name     "cheshire/cheshire"
+    :versions ALL}])
 
 (defn config->root-path
   [config]
