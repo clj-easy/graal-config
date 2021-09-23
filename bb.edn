@@ -20,7 +20,7 @@
 
   uber {:doc "Build uberjar for testing"
         :task (let [uber-file (str "output-" bs/graalvm-version)]
-                (clojure {:dir bs/dir} "-X:uberjar" {:uber-file uber-file})
+                (clojure {:dir bs/dir} "-T:build uber" {:uber-file uber-file})
                 uber-file)}
 
   graalvm {:doc "Checks GRAALVM_HOME env var"
