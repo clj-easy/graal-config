@@ -6,8 +6,9 @@
 
 # Usage
 Add following dependency to your `deps.edn`
+
 ``` clojure
-com.github.clj-easy/graal-config  {:git/url "https://github.com/clj-easy/graal-config"
+com.github.clj-easy/graal-config  {:git/sha "<latest-sha>"
                                    :deps/root "config/com.taoensso/nippy"}
 ```
 
