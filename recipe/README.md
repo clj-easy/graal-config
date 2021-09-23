@@ -12,8 +12,7 @@ com.github.clj-easy/graal-config  {:git/sha "<latest-sha>"
                                    :deps/root "config/<organization>/<library_name>"}
 ```
 
-
-**Works best in conjunction with clj-easy/graal-build-time**
+This library is recommended in combination with `graal-build-time` that automatically injects `--initialize-at-build-time` packages list.
 
 ``` clojure
 com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
