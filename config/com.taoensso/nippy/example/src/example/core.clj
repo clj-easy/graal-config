@@ -4,6 +4,6 @@
   (:gen-class))
 
 (defn -main
-  [& args]
+  [& _args]
   (prn (into [] (nippy/freeze nippy/stress-data)))
   (prn (nippy/thaw (nippy/freeze nippy/stress-data))))

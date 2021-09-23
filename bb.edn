@@ -1,0 +1,62 @@
+{:paths ["."]
+ :tasks
+ {:requires ([babashka.fs :as fs]
+             [babashka.tasks :as tasks]
+             [build-shared :as bs]
+             [clojure.string :as str])
+  :init
+  (do
+    (def windows? (str/starts-with? (System/getProperty "os.name")
+                                    "Windows"))
+
+    (defn clojure
+      "Clojure defaulting to stderr output"
+      [opts & args]
+      (let [[opts args] (if (map? opts)
+                          [opts args]
+                          [nil (cons opts args)])
+            [arg & args] args]
+        (apply tasks/clojure opts (str "-J-Dclojure.main.report=stderr " arg) args))))
+
+  uber {:doc "Build uberjar for testing"
+        :task (let [uber-file (str "output-" bs/graalvm-version)]
+                (clojure {:dir bs/dir} "-X:uberjar" {:uber-file uber-file})
+                uber-file)}
+
+  graalvm {:doc "Checks GRAALVM_HOME env var"
+           :task
+           (let [env (System/getenv "GRAALVM_HOME")]
+             (assert env "Set GRAALVM_HOME")
+             env)}
+
+  native-image
+  {:doc     "Builds native image"
+   :depends [graalvm uber]
+   :task (do (shell {:dir bs/dir} (str (fs/file graalvm
+                                                "bin"
+                                                (if windows?
+                                                  "gu.cmd"
+                                                  "gu")))
+                    "install" "native-image")
+             (shell {:dir bs/dir}
+                    (str (fs/file graalvm
+                                  "bin"
+                                  (if windows?
+                                    "native-image.cmd"
+                                    "native-image")))
+                    ;; note: we are omitting --initialize-at-build-time
+                    "-jar" uber
+                    "--no-fallback"
+                    "--no-server"
+                    "-H:Name=native-test"))}
+
+  native-image-test
+  {:doc "Run integration test"
+   :depends [native-image]
+   :task    (shell {:dir bs/dir}
+                   (if windows?
+                     "./native-test.exe"
+                     "./native-test"))}
+
+  ,}
+ ,}
