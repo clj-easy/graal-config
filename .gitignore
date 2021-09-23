@@ -12,3 +12,4 @@ graal-21.1.0
 graal-21.3.0-dev
 output-*
 target
+native-test*

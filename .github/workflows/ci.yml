@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
       - name: Cache GraalVM
         uses: actions/cache@v2
@@ -50,27 +52,5 @@ jobs:
           curl -sSL https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.3.0-dev-20210914_2058/graalvm-ce-java11-linux-amd64-dev.tar.gz | tar -zx -C graal-21.3.0-dev/ --strip-components=1 && \
           ./graal-21.3.0-dev/bin/gu install -n native-image && mv graal-21.3.0-dev ~/graal-21.3.0-dev
 
-      # - name: Run all tests
-      #   run: |
-
-      # - name: Setup GraalVM 21.2.0
-      #   run: |
-      #     mkdir -p graal-21.2.0 && \
-      #     curl -L https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.2.0/graalvm-ce-java11-linux-amd64-21.2.0.tar.gz | tar -zx -C graal-21.2.0/ --strip-components=1 && \
-      #     ./graal-21.2.0/bin/gu install native-image
-      # - name: Apply Cache
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       ~/.m2/repository
-      #     key: ${{ runner.os }}-graal-build-time-${{ hashFiles('deps.edn') }}
-      #     restore-keys: "$graal-build-time-"
-
-      # - name: Setup build tools
-      #   uses: ilammy/msvc-dev-cmd@v1
-
-      # - name: Run tests
-      #   run: bb test
-
-      # - name: Run native tests
-      #   run: bb native-image-test
+      - name: Run all tests
+        run: bb tests.clj

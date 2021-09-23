@@ -44,8 +44,9 @@
                                   (if windows?
                                     "native-image.cmd"
                                     "native-image")))
-                    ;; note: we are omitting --initialize-at-build-time
                     "-jar" uber
+                    "--initialize-at-build-time=example"
+                    "--verbose"
                     "--no-fallback"
                     "--no-server"
                     "-H:Name=native-test"))}

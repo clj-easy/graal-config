@@ -1,2 +1,1 @@
-{:paths ["resources"]
- :graalvm-supported-versions [:21.3.0-dev]}
+{:paths ["resources"]}
