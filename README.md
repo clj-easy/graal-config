@@ -2,6 +2,12 @@
 
 The repository for distributing the GraalVM `native-image`configurations via simple `deps.edn` subproject recipes.
 
+GraalVM configuration should be used in conjunction with the best library that automatically injects `--initialize-at-build-time` packages list.
+
+``` clojure
+com.github.clj-easy/graal-build-time {:mvn/version "<latest_release>"}
+```
+
 ## How to use
 
    1. Find the library you would like to use.
