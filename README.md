@@ -15,25 +15,27 @@ Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
 
 ``` clojure
 {:deps
- {cheshire/cheshire {:mvn/version "5.10.0"}
-  com.taoensso/nippy {:mvn/version "3.1.1"}
-  graal-config/cheshire {:git/url "https://github.com/clj-easy/graal-config"
-                         :git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
-                         :deps/root "config/cheshire/cheshire"}
-  graal-config/nippy {:git/url "https://github.com/clj-easy/graal-config"
-                      :git/sha "b06e33694d2c878169958f7317ea01d9c0353ab4"
-                      :deps/root "config/com.taoensso/nippy"}}}
+ {cheshire/cheshire                         {:mvn/version "5.10.0"}
+  com.taoensso/nippy                        {:mvn/version "3.1.1"}
+  com.github.clj-easy/graal-config-cheshire {:git/url   "https://github.com/clj-easy/graal-config"
+                                             :git/sha   "b06e33694d2c878169958f7317ea01d9c0353ab4"
+                                             :deps/root "config/cheshire/cheshire"}
+  com.github.clj-easy/graal-config-nippy    {:git/url   "https://github.com/clj-easy/graal-config"
+                                             :git/sha   "b06e33694d2c878169958f7317ea01d9c0353ab4"
+                                             :deps/root "config/com.taoensso/nippy"}}}
 ```
 
 ## Supported libraries
 
-  | Library name                                                  | Config path                         | Additional steps                        |
-  |---------------------------------------------------------------|-------------------------------------|-----------------------------------------|
-  | [com.taoensso/nippy](https://github.com/ptaoussanis/nippy)    | [link](./config/com.taoensso/nippy) | None                                    |
-  | [cheshire/cheshire](https://github.com/dakrone/cheshire)      | [link](./config/cheshire/cheshire)  | None                                    |
-  | [com.h2database/h2](https://github.com/h2database/h2database) | [link](./config/com.h2database/h2)  | `"--allow-incomplete-classpath"` /(1*)/ |
+  | Library name                                                                   | Config path                                        | Additional steps                         |
+  |--------------------------------------------------------------------------------|----------------------------------------------------|------------------------------------------|
+  | [com.taoensso/nippy](https://github.com/ptaoussanis/nippy)                     | [link](./config/com.taoensso/nippy)                | None                                     |
+  | [cheshire/cheshire](https://github.com/dakrone/cheshire)                       | [link](./config/cheshire/cheshire)                 | None                                     |
+  | [com.h2database/h2](https://github.com/h2database/h2database)                  | [link](./config/com.h2database/h2)                 | `"--allow-incomplete-classpath"` *(1\*)* |
+  | [com.github.seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc) | [link](./config/com.github.seancorfield/next.jdbc) | None                                     |
 
-1) Vote [here](https://github.com/oracle/graal/issues/1664), so that we can allow-incomplete-classpath for only the specific cases.
+
+1) Vote [here](https://github.com/oracle/graal/issues/1664), so that we can `allow-incomplete-classpath` for only the specific cases.
 
 ## Tested GraalVM versions
 
