@@ -1,0 +1,3 @@
+[EXECUTABLE]
+clojure.lang.LazySeq@555b0c3c
+

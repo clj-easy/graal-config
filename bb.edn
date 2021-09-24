@@ -38,19 +38,21 @@
                                                   "gu.cmd"
                                                   "gu")))
                     "install" "native-image")
-             (shell {:dir bs/dir}
+             (apply shell {:dir bs/dir}
                     (str (fs/file graalvm
                                   "bin"
                                   (if windows?
                                     "native-image.cmd"
                                     "native-image")))
                     "-jar" uber
-                    "--initialize-at-build-time=example"
-                    "--verbose"
-                    "--no-fallback"
-                    "--no-server"
-                    "-H:+ReportExceptionStackTraces"
-                    "-H:Name=native-test"))}
+                    (concat
+                     ["--initialize-at-build-time=example"
+                      "--verbose"
+                      "--no-fallback"
+                      "--no-server"
+                      "-H:+ReportExceptionStackTraces"
+                      "-H:Name=native-test"]
+                     (or (:flags (read-string (slurp (str bs/dir "/deps.edn")))) []))))}
 
   native-image-test
   {:doc "Run integration test"

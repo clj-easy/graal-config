@@ -20,6 +20,10 @@
   [{:name     "com.taoensso/nippy"
     :versions [DEV_BUILD]}
    {:name     "cheshire/cheshire"
+    :versions ALL}
+   {:name     "com.h2database/h2"
+    :versions ALL}
+   {:name     "com.github.seancorfield/next.jdbc"
     :versions ALL}])
 
 (defn config->root-path
