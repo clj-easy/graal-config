@@ -44,8 +44,10 @@ Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
 ## Contributing
 
 1. Clone the repository.
-2. Copy the recipe `cp -R recipe/* config/organization/library`.
-3. Provide `META-INF/organization/library/native-image.properties` with necessary native configurations.
+2. Run `bb recipe :org <org> :lib <lib>`
+3. Provide config in
+   `META-INF/native-image/organization/library/native-image.properties` +
+   additional JSON files if necessary.
 
 ### Tests
 

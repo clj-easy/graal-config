@@ -62,5 +62,14 @@
                      "./native-test.exe"
                      "./native-test"))}
 
+  recipe
+  {:task
+   (do
+     (let [lib-dir (fs/file "config" bs/org bs/lib)
+           conf-dir (fs/file lib-dir "resources" "META-INF" "native-image" bs/org bs/lib)]
+       (fs/create-dirs conf-dir)
+       (fs/copy-tree "recipe" lib-dir {:replace-existing true})
+       (spit (fs/file conf-dir "native-image.properties") "")))}
+
   ,}
  ,}
