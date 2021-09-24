@@ -19,7 +19,7 @@
         (apply tasks/clojure opts (str "-J-Dclojure.main.report=stderr " arg) args))))
 
   uber {:doc "Build uberjar for testing"
-        :task (let [uber-file (str "output-" bs/graalvm-version)]
+        :task (let [uber-file (str "output-" bs/graalvm-version ".jar")]
                 (clojure {:dir bs/dir} "-T:build uber" {:uber-file uber-file})
                 uber-file)}
 
