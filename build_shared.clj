@@ -1,11 +1,12 @@
 (ns build-shared)
 
-(def version "0.0.1")
+(def args (apply hash-map *command-line-args*))
 
-(let [[& {dir ":dir"
-          graalvm-version ":graalvm-version"}]  *command-line-args*]
-  (def dir dir)
-  (def graalvm-version graalvm-version))
+(doseq [[arg-name arg-val] args]
+  (intern *ns* (symbol (subs arg-name 1)) arg-val))
 
-(assert dir "Must provide :dir argument")
-(assert graalvm-version "Must provide :graalvm-version")
+(defn def-default [sym default]
+  (when-not (resolve sym)
+    (intern *ns* sym default)))
+
+(def-default 'graalvm-version "21.1.0")

@@ -2,7 +2,7 @@
  :tasks
  {:requires ([babashka.fs :as fs]
              [babashka.tasks :as tasks]
-             [build-shared :as bs]
+             [build-shared :as bs :refer [args]]
              [clojure.string :as str])
   :init
   (do
