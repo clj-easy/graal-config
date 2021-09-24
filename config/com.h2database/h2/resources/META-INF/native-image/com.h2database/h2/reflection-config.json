@@ -1,0 +1,54 @@
+[
+    {
+        "name":"org.h2.engine.Engine",
+        "methods":[{"name":"getInstance","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.mvstore.db.MVTableEngine",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathAsync",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathDisk",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathMem",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathMemLZF",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathNio",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathNioMapped",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathNioMem",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathNioMemLZF",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathRetryOnInterrupt",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathSplit",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    },
+    {
+        "name":"org.h2.store.fs.FilePathZip",
+        "methods":[{"name":"<init>","parameterTypes":[] }]
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "resources":[
+        {"pattern":"META-INF/services/java.sql.Driver"},
+        {"pattern":"org/h2/util/data.zip"}
+    ]
+}
