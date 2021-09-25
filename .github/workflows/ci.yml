@@ -43,21 +43,21 @@ jobs:
         run: |
           mkdir -p graal-21.1.0 && \
           curl -sSL https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-amd64-21.1.0.tar.gz | tar -zx -C graal-21.1.0/ --strip-components=1 && \
-          ./graal-21.1.0/bin/gu install -n native-image && mv graal-21.1.0 ~/graal-21.1.0
+          ./graal-21.1.0/bin/gu install -n native-image && mv graal-21.1.0 ~/.graal-21.1.0
 
       - name: Setup GraalVM 21.2.0
         if: steps.graalvm-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p graal-21.2.0 && \
           curl -sSL https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.2.0/graalvm-ce-java11-linux-amd64-21.2.0.tar.gz | tar -zx -C graal-21.2.0/ --strip-components=1 && \
-          ./graal-21.2.0/bin/gu install -n native-image && mv graal-21.2.0 ~/graal-21.2.0
+          ./graal-21.2.0/bin/gu install -n native-image && mv graal-21.2.0 ~/.graal-21.2.0
 
       - name: Setup GraalVM 21.3.0-dev
         if: steps.graalvm-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p graal-21.3.0-dev && \
           curl -sSL https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.3.0-dev-20210914_2058/graalvm-ce-java11-linux-amd64-dev.tar.gz | tar -zx -C graal-21.3.0-dev/ --strip-components=1 && \
-          ./graal-21.3.0-dev/bin/gu install -n native-image && mv graal-21.3.0-dev ~/graal-21.3.0-dev
+          ./graal-21.3.0-dev/bin/gu install -n native-image && mv graal-21.3.0-dev ~/.graal-21.3.0-dev
 
       - name: Run all tests
         run: bb tests.clj

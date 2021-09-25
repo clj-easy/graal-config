@@ -49,7 +49,10 @@
         (println "> Running tests for config:" (:name config))
         (doseq [version (:versions config)]
           (println ">> Running tests for config:" (:name config) "GraalVM version:" version)
-          @(shell true (str "bash -c \"export GRAALVM_HOME=" (versions<->home version) "; bb native-image-test :dir " (config->test-path config) " :graalvm-version " (versions<->home version) "\""))
+          (let [result @(shell true (str "bash -c \"export GRAALVM_HOME=" (versions<->home version) "; bb native-image-test :dir " (config->test-path config) " :graalvm-version " (versions<->home version) "\""))]
+            (if (= 0 (:exit result))
+              (println ">>> Successful test!")
+              (System/exit 1)))
           (println ">> Running tests for config:" (:name config) "GraalVM version:" version "...Success!"))))))
 
 (run-tests!)
