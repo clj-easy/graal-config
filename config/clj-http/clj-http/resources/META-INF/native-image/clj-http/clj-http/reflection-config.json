@@ -1,0 +1,6 @@
+[
+    {
+        "name": "org.apache.commons.logging.impl.LogFactoryImpl",
+        "methods":[{"name":"<init>","parameterTypes":[]}]
+    }
+]
