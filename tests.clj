@@ -9,9 +9,9 @@
 (def LATEST_CE "21.2.0")
 
 (def versions<->home
-  {DEV_BUILD                    (str "~/graal-" DEV_BUILD)
-   ONE_RELEASE_BEFORE_LATEST_CE (str "~/graal-" ONE_RELEASE_BEFORE_LATEST_CE)
-   LATEST_CE                    (str "~/graal-" LATEST_CE)})
+  {DEV_BUILD                    (str "~/.graal-" DEV_BUILD)
+   ONE_RELEASE_BEFORE_LATEST_CE (str "~/.graal-" ONE_RELEASE_BEFORE_LATEST_CE)
+   LATEST_CE                    (str "~/.graal-" LATEST_CE)})
 
 (def ALL [DEV_BUILD LATEST_CE ONE_RELEASE_BEFORE_LATEST_CE])
 (def STABLE_BUILDS [LATEST_CE ONE_RELEASE_BEFORE_LATEST_CE])
@@ -24,6 +24,8 @@
    {:name     "com.h2database/h2"
     :versions ALL}
    {:name     "com.github.seancorfield/next.jdbc"
+    :versions ALL}
+   {:name     "org.slf4j/slf4j-simple"
     :versions ALL}])
 
 (defn config->root-path
@@ -41,7 +43,7 @@
 (defn run-tests!
   []
   (doseq [config configs]
-    (if-not (should-test? config)
+    (if (and (not (System/getenv "TEST_ALL"))(not (should-test? config)))
       (println "> Skipping tests for config:" (:name config))
       (do
         (println "> Running tests for config:" (:name config))

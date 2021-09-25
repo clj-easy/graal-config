@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 *.log
+!pedestal.log
 tmp/
 
 *.class
@@ -13,3 +14,4 @@ graal-21.3.0-dev
 output-*
 target
 native-test*
+.lsp

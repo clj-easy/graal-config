@@ -21,9 +21,9 @@ jobs:
         id: graalvm-cache
         with:
           path: |
-            ~/graal-21.1.0
-            ~/graal-21.2.0
-            ~/graal-21.3.0-dev
+            ~/.graal-21.1.0
+            ~/.graal-21.2.0
+            ~/.graal-21.3.0-dev
           key: ${{ runner.os }}-graalvm
 
       - name: Cache Maven
