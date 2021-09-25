@@ -1,4 +1,6 @@
-(require '[babashka.process :as p])
+(require '[babashka.process :as p]
+         '[clojure.string :as s]
+         '[clojure.java.shell :as csh])
 
 (defn- shell
   [inherit? cmd & args]
@@ -8,7 +10,14 @@
 (def ONE_RELEASE_BEFORE_LATEST_CE "21.1.0")
 (def LATEST_CE "21.2.0")
 
-(def versions<->home
+(defn github-graalvm-version
+  []
+  (let [result (s/trim (:out (csh/sh (str (System/getenv "GRAALVM_HOME") "/bin/native-image") "--version")))
+        graalvm-version (second (first (re-seq #"GraalVM ([A-Za-z\.0-9-]+)" result)))]
+    (println "> GraalVM Version" graalvm-version)
+    graalvm-version))
+
+(def versions<->home-local
   {DEV_BUILD                    (str "~/.graal-" DEV_BUILD)
    ONE_RELEASE_BEFORE_LATEST_CE (str "~/.graal-" ONE_RELEASE_BEFORE_LATEST_CE)
    LATEST_CE                    (str "~/.graal-" LATEST_CE)})
@@ -26,7 +35,10 @@
    {:name     "com.github.seancorfield/next.jdbc"
     :versions ALL}
    {:name     "org.slf4j/slf4j-simple"
-    :versions ALL}])
+    :versions ALL}
+   {:name     "clj-http/clj-http"
+    :versions ALL}
+   ])
 
 (defn config->root-path
   [config]
@@ -42,17 +54,28 @@
 
 (defn run-tests!
   []
-  (doseq [config configs]
-    (if (and (not (System/getenv "TEST_ALL"))(not (should-test? config)))
+  (doseq [config configs
+          :let [run-tests (fn [version]
+                            (println ">> Running tests for config:" (:name config) "GraalVM version:" version)
+                            (let [result @(shell true (str "bash -c \"bb native-image-test :dir " (config->test-path config) " :graalvm-version " (or (versions<->home-local version) "provided") "\""))]
+                              (if (= 0 (:exit result))
+                                (println ">>> Successful test!")
+                                (System/exit 1)))
+                            (println ">> Running tests for config:" (:name config) "GraalVM version:" version "...Success!"))]]
+    (if (and (not (System/getenv "LOCAL")) (not (should-test? config)))
       (println "> Skipping tests for config:" (:name config))
       (do
         (println "> Running tests for config:" (:name config))
-        (doseq [version (:versions config)]
-          (println ">> Running tests for config:" (:name config) "GraalVM version:" version)
-          (let [result @(shell true (str "bash -c \"bb native-image-test :dir " (config->test-path config) " :graalvm-version " (versions<->home version) "\""))]
-            (if (= 0 (:exit result))
-              (println ">>> Successful test!")
-              (System/exit 1)))
-          (println ">> Running tests for config:" (:name config) "GraalVM version:" version "...Success!"))))))
+        (if (System/getenv "LOCAL")
+          (doseq [version (:versions config)]
+            (run-tests version))
+          (do
+            @(shell true (str (System/getenv "GRAALVM_HOME") "/bin/gu") "install" "native-image")
+            (let [versions (:versions config)
+                  version (github-graalvm-version)]
+              (when (or (contains? (set versions) version)
+                        (and (s/includes? version "dev")
+                             (contains? (set versions) DEV_BUILD)))
+                (run-tests "provided")))))))))
 
 (run-tests!)

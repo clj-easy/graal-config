@@ -27,13 +27,14 @@ Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
 
 ## Supported libraries
 
-  | Library name                                                                   | Config path                                        | Additional steps                         |
-  |--------------------------------------------------------------------------------|----------------------------------------------------|------------------------------------------|
-  | [com.taoensso/nippy](https://github.com/ptaoussanis/nippy)                     | [link](./config/com.taoensso/nippy)                | None                                     |
-  | [cheshire/cheshire](https://github.com/dakrone/cheshire)                       | [link](./config/cheshire/cheshire)                 | None                                     |
-  | [com.h2database/h2](https://github.com/h2database/h2database)                  | [link](./config/com.h2database/h2)                 | `"--allow-incomplete-classpath"` *(1\*)* |
-  | [com.github.seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc) | [link](./config/com.github.seancorfield/next.jdbc) | None                                     |
-  | [org.slf4j/slf4j-simple](https://github.com/qos-ch/slf4j/tree/master/slf4j-simple) | [link](./config/org.slf4j/slf4j-simple) | None                                     |
+| Library name                                                                       | Config path                                        | Additional steps                         |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------- |
+| [com.taoensso/nippy](https://github.com/ptaoussanis/nippy)                         | [link](./config/com.taoensso/nippy)                | None                                     |
+| [cheshire/cheshire](https://github.com/dakrone/cheshire)                           | [link](./config/cheshire/cheshire)                 | None                                     |
+| [com.h2database/h2](https://github.com/h2database/h2database)                      | [link](./config/com.h2database/h2)                 | `"--allow-incomplete-classpath"` _(1\*)_ |
+| [com.github.seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc)     | [link](./config/com.github.seancorfield/next.jdbc) | None                                     |
+| [org.slf4j/slf4j-simple](https://github.com/qos-ch/slf4j/tree/master/slf4j-simple) | [link](./config/org.slf4j/slf4j-simple)            | None                                     |
+| [clj-http](https://github.com/dakrone/clj-http)                                    | [link](./config/clj-http/clj-http)                 | None                                     |
 
 1) Vote [here](https://github.com/oracle/graal/issues/1664), so that we can `allow-incomplete-classpath` for only the specific cases.
 
