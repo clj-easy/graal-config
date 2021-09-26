@@ -1,0 +1,252 @@
+[{
+      "name" : "com.sun.jna.CallbackProxy",
+      "methods" : [ {
+          "name" : "callback",
+          "parameterTypes" : [ "java.lang.Object[]" ]
+      } ]
+}, {
+  "name" : "java.io.FileNotFoundException"
+}, {
+  "name" : "java.lang.Byte"
+}, {
+  "name" : "java.lang.Integer"
+}, {
+  "name" : "java.lang.Object",
+  "methods" : [ {
+    "name" : "equals",
+    "parameterTypes" : [ "java.lang.Object" ]
+  }, {
+    "name" : "hashCode",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "toString",
+    "parameterTypes" : [ ]
+  } ]
+}, {
+  "name" : "java.lang.Short"
+}, {
+  "name" : "java.lang.String",
+  "allPublicMethods" : true
+},
+{
+  "name" : "java.lang.Boolean",
+  "allPublicMethods" : true
+},
+{
+  "name" : "java.lang.Character",
+  "allPublicMethods" : true
+},
+{
+  "name" : "java.lang.Long",
+  "allPublicMethods" : true
+},
+{
+  "name" : "java.lang.Float",
+  "allPublicMethods" : true
+},
+{
+  "name" : "java.lang.Double",
+  "allPublicMethods" : true
+},
+
+ {
+  "name" : "java.lang.Throwable",
+  "methods" : [ {
+    "name" : "addSuppressed",
+    "parameterTypes" : [ "java.lang.Throwable" ]
+  }, {
+    "name" : "getCause",
+    "parameterTypes" : [ ]
+  }, {
+    "name" : "initCause",
+    "parameterTypes" : [ "java.lang.Throwable" ]
+  } ]
+}, {
+  "name" : "java.lang.invoke.MethodHandle",
+  "methods" : [ {
+    "name" : "bindTo",
+    "parameterTypes" : [ "java.lang.Object" ]
+  }, {
+    "name" : "invokeWithArguments",
+    "parameterTypes" : [ "java.lang.Object[]" ]
+  } ]
+}, {
+  "name" : "java.lang.invoke.MethodHandles",
+  "methods" : [ {
+    "name" : "lookup",
+    "parameterTypes" : [ ]
+  } ]
+}, {
+  "name" : "java.lang.invoke.MethodHandles$Lookup",
+  "methods" : [ {
+    "name" : "findSpecial",
+    "parameterTypes" : [ "java.lang.Class", "java.lang.String", "java.lang.invoke.MethodType", "java.lang.Class" ]
+  }, {
+    "name" : "in",
+    "parameterTypes" : [ "java.lang.Class" ]
+  }, {
+    "name" : "unreflectSpecial",
+    "parameterTypes" : [ "java.lang.reflect.Method", "java.lang.Class" ]
+  } ]
+}, {
+  "name" : "java.lang.invoke.MethodType",
+  "methods" : [ {
+    "name" : "methodType",
+    "parameterTypes" : [ "java.lang.Class", "java.lang.Class[]" ]
+  } ]
+},{
+  "name" : "java.nio.Buffer"
+}, {
+  "name" : "java.security.MessageDigestSpi"
+},
+ {
+    "name" : "org.testcontainers.dockerclient.EnvironmentAndSystemPropertyClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.dockerclient.UnixSocketClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.dockerclient.DockerMachineClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.utility.DefaultImageNameSubstitutor",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+ {
+    "name" : "org.testcontainers.dockerclient.DockerClientProviderStrategy",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+{
+  "name":"org.testcontainers.shaded.com.fasterxml.jackson.databind.deser.BeanDeserializerModifier[]"
+},
+{
+  "name":"org.testcontainers.shaded.com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.DockerConfigFile",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"org.testcontainers.containers.output.ToStringConsumer"
+},
+{
+  "name":"org.testcontainers.containers.Network"
+},
+{
+  "name":"org.testcontainers.containers.GenericContainer"
+},
+{
+  "name":"org.testcontainers.containers.BindMode"
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrAsyncDockerCmd",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.command.CreateContainerCmdImpl",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.command.ExecCreateCmdImpl",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"org.testcontainers.shaded.com.github.dockerjava.core.command.ExecStartCmdImpl",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"org.testcontainers.shaded.com.google.common.collect.ImmutableMapEntry[]"
+},
+{
+  "name":"org.testcontainers.shaded.com.google.common.collect.RegularImmutableMap",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"org.testcontainers.shaded.org.awaitility.core.ConditionFactory$1",
+  "allDeclaredMethods":true
+},
+{
+  "name":"org.testcontainers.utility.MountableFile"
+},
+{
+  "name":"org.testcontainers.utility.ResourceReaper"
+},
+{
+  "name":"org.testcontainers.containers.wait.strategy.Wait"
+},
+{
+  "name":"org.testcontainers.images.builder.ImageFromDockerfile"
+},
+ { "name": "com.sun.jna.Native",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true,
+  "allPublicMethods" : true
+ },
+ { "name": "org.testcontainers.shaded.okhttp3.internal.platform.AndroidPlatform",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true,
+  "allPublicMethods" : true
+ },
+{
+  "name":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.Sun",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+
+{
+  "name":"java.security.MessageDigestSpi"
+},
+{
+  "name":"java.security.SecureRandomParameters"
+}
+ ]

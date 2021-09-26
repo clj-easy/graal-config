@@ -1,0 +1,16 @@
+{
+  "resources" : {
+    "includes" : [ {
+      "pattern" : "\\QMETA-INF/services/jdk.vm.ci.hotspot.HotSpotJVMCIBackendFactory\\E"
+    }, {
+      "pattern" : "\\QMETA-INF/services/jdk.vm.ci.services.JVMCIServiceLocator\\E"
+    }, {
+      "pattern" : "\\QMETA-INF/services/org.testcontainers.dockerclient.DockerClientProviderStrategy\\E"
+    },
+    {"pattern":"\\Qcom/github/dockerjava/zerodep/shaded/org/apache/hc/client5/version.properties\\E"},
+                   {
+      "pattern" : "\\Qcom/sun/jna/linux-x86-64/libjnidispatch.so\\E"
+    } ]
+  },
+  "bundles" : [ ]
+}
