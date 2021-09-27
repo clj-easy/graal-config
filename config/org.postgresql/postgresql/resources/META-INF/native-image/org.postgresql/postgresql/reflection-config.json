@@ -1,0 +1,9 @@
+[
+    {
+        "name": "org.postgresql.PGProperty",
+        "allDeclaredFields": true
+    },
+    {
+        "name": "org.postgresql.Driver"
+    }
+]
