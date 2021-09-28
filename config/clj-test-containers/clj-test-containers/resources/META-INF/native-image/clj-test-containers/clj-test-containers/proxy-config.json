@@ -1,3 +1,5 @@
 [
-    ["org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy$LibC"]
+    ["org.testcontainers.dockerclient.RootlessDockerClientProviderStrategy$LibC"],
+  ["com.sun.jna.Library"],
+  ["com.sun.jna.Callback"]
 ]
