@@ -40,10 +40,12 @@ Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
 
 ## Neil
 
-To add a library to your deps.edn with [neil](https://github.com/babashka/neil):
+To add a library to your `deps.edn` with [neil](https://github.com/babashka/neil):
 
 ``` clojure
-neil add dep com.github.clj-easy/graal-config :deps/root config/com.taoensso/nippy :as com.github.clj-easy/graal-config-nippy :latest-sha true
+neil add dep com.github.clj-easy/graal-config \
+  :deps/root config/com.taoensso/nippy \
+  :as com.github.clj-easy/graal-config-nippy :latest-sha true
 ```
 
 ## Tested GraalVM versions
