@@ -1,9 +1,0 @@
-{:paths ["src"]
- :deps  {org.clojure/clojure                  {:mvn/version "1.10.3"}
-         org.clojure/data.xml                 {:mvn/version "0.0.8"}
-         com.github.clj-easy/graal-build-time {:mvn/version "0.1.4"}
-         com.github.clj-easy/graal-config     {:local/root "../"}}
- :aliases
- {:build {:deps       {io.github.clojure/tools.build {:git/tag "v0.5.1"
-                                                      :git/sha "21da7d4"}}
-          :ns-default build}}}
