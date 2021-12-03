@@ -18,5 +18,6 @@
     (when-not (= (:out (sh "curl" "http://localhost:3000")) "hello world")
       (println "Test failed")
       (System/exit 1))
+    (println "hello world")
     (.stop server)
     (shutdown-agents)))
