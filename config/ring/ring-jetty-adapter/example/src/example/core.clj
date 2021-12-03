@@ -15,6 +15,6 @@
                            :body "hello world"})
                         {:join? false
                          :port 3000})]
-    (println (sh "curl" "http://localhost:3000"))
+    (= (:out (sh "curl" "http://localhost:3000")) "hello world")
     (.stop server)
     (shutdown-agents)))

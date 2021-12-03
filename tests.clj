@@ -30,9 +30,9 @@
 
 (def configs
   [{:name     "ring/ring-jetty-adapter"
-    :versions [ALL]}
+    :versions ALL}
    {:name     "com.taoensso/nippy"
-    :versions [DEV_BUILD]}
+    :versions DEV_BUILD}
    {:name     "cheshire/cheshire"
     :versions ALL}
    {:name     "com.h2database/h2"
@@ -60,7 +60,6 @@
   []
   (doseq [config configs
           :let [run-tests (fn [version]
-                            (println ">> Running tests for config:" (:name config) "GraalVM version:" version)
                             (let [result @(shell true (str "bash -c \"bb native-image-test :dir " (config->test-path config) " :graalvm-version " (or (versions<->home-local version) "provided") "\""))]
                               (if (= 0 (:exit result))
                                 (println ">>> Successful test!")
