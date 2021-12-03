@@ -1,6 +1,7 @@
-(require '[babashka.process :as p]
-         '[clojure.string :as s]
-         '[clojure.java.shell :as csh])
+(require
+ '[babashka.process :as p]
+ '[clojure.string :as s]
+ '[clojure.java.shell :as csh])
 
 (defn- shell
   [inherit? cmd & args]
