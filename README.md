@@ -35,7 +35,7 @@ Full example for both `cheshire/cheshire` and `com.taoensso/nippy` in one build:
 | [com.github.seancorfield/next.jdbc](https://github.com/seancorfield/next-jdbc)     | [link](./config/com.github.seancorfield/next.jdbc) | MERGED UPSTREAM                          |
 | [org.slf4j/slf4j-simple](https://github.com/qos-ch/slf4j/tree/master/slf4j-simple) | [link](./config/org.slf4j/slf4j-simple)            | None                                     |
 | [clj-http](https://github.com/dakrone/clj-http)                                    | [link](./config/clj-http/clj-http)                 | None                                     |
-| [ring-clojure/ring](https://github.com/ring-clojure/ring)                          | [link](./config/ring/ring-jetty-adapter)           | None                                     |
+| [ring/ring-jetty-adapter](https://github.com/ring-clojure/ring)                    | [link](./config/ring/ring-jetty-adapter)           | None                                     |
 
 1) Vote [here](https://github.com/oracle/graal/issues/1664), so that we can `allow-incomplete-classpath` for only the specific cases.
 
