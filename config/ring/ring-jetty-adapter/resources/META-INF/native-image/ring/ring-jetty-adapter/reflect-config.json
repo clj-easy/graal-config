@@ -1,0 +1,122 @@
+[
+   {
+      "name":"[Lorg.eclipse.jetty.server.ConnectionFactory;"
+   },
+   {
+      "name":"java.lang.Class",
+      "methods":[
+         {
+            "name":"getModule",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.Module",
+      "methods":[
+         {
+            "name":"getLayer",
+            "parameterTypes":[
+
+            ]
+         },
+         {
+            "name":"getName",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.ModuleLayer",
+      "methods":[
+         {
+            "name":"configuration",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.String",
+      "queryAllPublicMethods":true,
+      "methods":[
+         {
+            "name":"contains",
+            "parameterTypes":[
+               "java.lang.CharSequence"
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.management.ManagementFactory",
+      "methods":[
+         {
+            "name":"getRuntimeMXBean",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.management.RuntimeMXBean",
+      "methods":[
+         {
+            "name":"getUptime",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.module.Configuration",
+      "methods":[
+         {
+            "name":"findModule",
+            "parameterTypes":[
+               "java.lang.String"
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.module.ModuleReference",
+      "methods":[
+         {
+            "name":"location",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"java.lang.module.ResolvedModule",
+      "methods":[
+         {
+            "name":"reference",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "name":"org.eclipse.jetty.util.ModuleLocation",
+      "methods":[
+         {
+            "name":"<init>",
+            "parameterTypes":[
+
+            ]
+         }
+      ]
+   }
+]

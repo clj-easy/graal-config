@@ -3,6 +3,7 @@
 *.log
 !pedestal.log
 tmp/
+.clj-kondo/**
 
 *.class
 build
