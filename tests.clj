@@ -32,7 +32,7 @@
   [{:name     "ring/ring-jetty-adapter"
     :versions ALL}
    {:name     "com.taoensso/nippy"
-    :versions DEV_BUILD}
+    :versions (conj [LATEST_CE] DEV_BUILD)}
    {:name     "cheshire/cheshire"
     :versions ALL}
    {:name     "com.h2database/h2"
