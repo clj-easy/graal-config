@@ -15,6 +15,8 @@
                            :body "hello world"})
                         {:join? false
                          :port 3000})]
-    (= (:out (sh "curl" "http://localhost:3000")) "hello world")
+    (when-not (= (:out (sh "curl" "http://localhost:3000")) "hello world")
+      (println "Test failed")
+      (System/exit 1))
     (.stop server)
     (shutdown-agents)))

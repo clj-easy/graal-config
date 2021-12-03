@@ -42,18 +42,6 @@
       ]
    },
    {
-      "name":"java.lang.String",
-      "queryAllPublicMethods":true,
-      "methods":[
-         {
-            "name":"contains",
-            "parameterTypes":[
-               "java.lang.CharSequence"
-            ]
-         }
-      ]
-   },
-   {
       "name":"java.lang.management.ManagementFactory",
       "methods":[
          {
