@@ -1,8 +1,5 @@
 [
    {
-      "name":"clojure.lang.APersistentMap"
-   },
-   {
       "name":"clojure.lang.ExceptionInfo"
    },
    {
