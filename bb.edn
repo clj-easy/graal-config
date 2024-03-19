@@ -46,7 +46,8 @@
                       "--no-server"
                       "-J-Dclojure.spec.skip.macros=true"
                       "-J-Dclojure.compiler.direct-linking=true"
-                      "-J-Xmx5g"
+                      "-J-Xmx8g"
+                      "-Ob"
                       "-H:+ReportExceptionStackTraces"
                       "-H:Name=native-test"]
                      (or (:flags (read-string (slurp (str bs/dir "/deps.edn")))) []))))}
