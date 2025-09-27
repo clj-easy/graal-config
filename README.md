@@ -49,7 +49,7 @@ neil add dep com.github.clj-easy/graal-config \
   :as com.github.clj-easy/graal-config-nippy :latest-sha true
 ```
 
-## Tested GraalVM versions ([see here](./github/workflows/ci.yml))
+## Tested GraalVM versions ([see here](./.github/workflows/ci.yml))
 
 ## Contributing
 
